@@ -1795,7 +1795,7 @@ header.tekup-header-section {
 }
 
 header.tekup-header-section.sticky-menu {
-  box-shadow: 0 4px 80px rgba(0, 0, 0, 0.06);
+  box-shadow: 0 4px 80px rgba(0, 0, 0, 0.1);
 }
 
 header.tekup-header-section.light-color.sticky-menu {
@@ -1823,6 +1823,7 @@ header.tekup-header-section.light-color.sticky-menu {
 
 .tekup-header-top {
   padding: 12px 0;
+  transition: all 0.4s;
 }
 @media (max-width: 991px) {
   .tekup-header-top {
@@ -1855,12 +1856,16 @@ header.tekup-header-section.light-color.sticky-menu {
   font-size: 18px;
   color: var(--white-color);
 }
-.tekup-header-info ul li a img {
+.tekup-header-info ul li a i {
   position: absolute;
+  font-size: 22px;
   left: 0;
 }
 .tekup-header-info.dark-color ul li a {
   color: var(--heading-color);
+}
+.tekup-header-info.dark-color ul li a i {
+  color: var(--accent-color);
 }
 
 .tekup-header-bottom.border_bottom {
@@ -1914,6 +1919,16 @@ header.tekup-header-section.light-color.sticky-menu {
   cursor: pointer;
   position: relative;
 }
+.tekup-header-search.light-color i {
+  color: var(--white-color);
+  transition: all 0.4s;
+}
+.tekup-header-search i {
+  font-size: 24px;
+}
+.tekup-header-search:hover i {
+  color: var(--accent-color);
+}
 @media (max-width: 767px) {
   .tekup-header-search {
     display: none;
@@ -1952,6 +1967,14 @@ header.tekup-header-section.light-color.sticky-menu {
   right: 40px;
   cursor: pointer;
 }
+.tekup-header-search-close i {
+  font-size: 30px;
+  color: #6E6E77;
+  transition: all 0.4s;
+}
+.tekup-header-search-close:hover i {
+  color: var(--accent-color);
+}
 
 .tekup-header-info-box-wrap {
   display: flex;
@@ -1973,19 +1996,72 @@ header.tekup-header-section.light-color.sticky-menu {
   border-radius: 100px;
   background-color: var(--light-bg1);
 }
+.tekup-header-info-box-icon i {
+  font-size: 26px;
+  color: var(--accent-color);
+}
+.tekup-header-info-box-data h6 {
+  color: var(--heading-color);
+}
 .tekup-header-info-box-data p {
   font-size: 18px;
   margin-bottom: 5px;
   line-height: 1;
+  color: var(--heading-color);
 }
 
 .tekup-header-barger {
   cursor: pointer;
+  position: relative;
+  width: 60px;
+  height: 24px;
+  display: flex;
+  align-items: center;
 }
 @media (max-width: 767px) {
   .tekup-header-barger {
     display: none;
   }
+}
+.tekup-header-barger span {
+  height: 2px;
+  width: 60px;
+  margin: 4px 0;
+  display: block;
+  position: relative;
+  background-color: var(--white-bg);
+}
+.tekup-header-barger span:before {
+  content: "";
+  top: -8px;
+  width: 35px;
+  height: 2px;
+  transition: all 0.4s;
+  position: absolute;
+  transform: translateX(15px);
+  background-color: var(--white-bg);
+}
+.tekup-header-barger span::after {
+  content: "";
+  bottom: -8px;
+  width: 35px;
+  height: 2px;
+  position: absolute;
+  transition: all 0.4s;
+  transform: translateX(9px);
+  background-color: var(--white-bg);
+}
+.tekup-header-barger.dark span {
+  background-color: var(--dark-bg);
+}
+.tekup-header-barger.dark span:before, .tekup-header-barger.dark span:after {
+  background-color: var(--dark-bg);
+}
+.tekup-header-barger:hover span:before {
+  transform: translateX(5px);
+}
+.tekup-header-barger:hover span::after {
+  transform: translateX(15px);
 }
 
 .tekup-sidemenu-wraper {
@@ -2025,8 +2101,12 @@ header.tekup-header-section.light-color.sticky-menu {
 .tekup-header-sedebar-info {
   margin-bottom: 45px;
 }
-.tekup-header-sedebar-info img {
+.tekup-header-sedebar-info i {
+  display: block;
+  font-size: 24px;
   margin-bottom: 15px;
+  line-height: 24px;
+  color: var(--accent-color);
 }
 .tekup-header-sedebar-info h5 {
   margin-bottom: 6px;
@@ -2051,6 +2131,14 @@ header.tekup-header-section.light-color.sticky-menu {
   right: 40px;
   top: 40px;
   cursor: pointer;
+}
+.tekup-sidemenu-close i {
+  font-size: 30px;
+  color: #6E6E77;
+  transition: all 0.4s;
+}
+.tekup-sidemenu-close:hover i {
+  color: var(--accent-color);
 }
 
 .active .tekup-sidemenu-close {
@@ -2258,13 +2346,17 @@ header.tekup-header-section.light-color.sticky-menu {
   font-size: 20px;
   color: var(--white-color);
 }
-.tekup-footer-info ul li a img {
-  position: absolute;
+.tekup-footer-info ul li a i {
+  top: 0;
   left: 0;
-  top: 7px;
+  font-size: 22px;
+  position: absolute;
 }
 .tekup-footer-info.dark-color ul li a {
   color: var(--heading-color);
+}
+.tekup-footer-info.dark-color ul li a i {
+  color: var(--accent-color);
 }
 
 .tekup-infobox-wrap.extra-padding {
@@ -2301,6 +2393,10 @@ header.tekup-header-section.light-color.sticky-menu {
   align-items: center;
   justify-content: center;
   background-color: var(--accent-bg);
+}
+.tekup-infobox-icon i {
+  font-size: 24px;
+  color: var(--white-color);
 }
 .tekup-infobox-data p {
   font-size: 18px;
@@ -2344,38 +2440,36 @@ header.tekup-header-section.light-color.sticky-menu {
   position: relative;
   transform-style: preserve-3d;
 }
-.tekup-default-btn img {
+.tekup-default-btn i {
+  font-size: 22px;
   margin-left: 12px;
   transition: all 0.4s ease-in-out;
 }
-.tekup-default-btn:hover img {
+.tekup-default-btn:hover i {
   transform: translate(42px, -42px);
 }
 .tekup-default-btn::before {
   background-repeat: no-repeat;
   position: absolute;
-  content: "";
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  content: "\ea70";
   right: 0;
   top: 0;
   opacity: 1;
   height: 100%;
-  width: 17px;
-  transform: translate(-60px, 60px);
+  font-size: 22px;
+  font-family: remixicon !important;
+  transform: translate(-65px, 65px);
   transition: all 0.2s linear 0s;
-  background-image: url(../images/icon/arrow-top.svg);
 }
 .tekup-default-btn:hover::before {
-  transform: translate(-34px, 25px);
+  transform: translate(-40px, 18px);
 }
 .tekup-default-btn.tekup-white-btn {
   color: var(--heading-color) !important;
   background-color: var(--white-bg);
 }
 .tekup-default-btn.tekup-white-btn:before {
-  background-image: url(../images/icon/arrow-top-dark.svg);
+  content: "\ea70";
 }
 .tekup-default-btn.outline-btn-dark {
   padding: 17px 38px;
@@ -2383,23 +2477,17 @@ header.tekup-header-section.light-color.sticky-menu {
   border: 1px solid var(--heading-color);
   background-color: transparent !important;
 }
-.tekup-default-btn.outline-btn-dark:before {
-  background-image: url(../images/icon/arrow-top-dark.svg);
-}
 .tekup-default-btn.outline-btn-white {
   padding: 17px 38px;
   color: var(--white-color) !important;
   border: 1px solid var(--white-color);
   background-color: transparent !important;
 }
-.tekup-default-btn.outline-btn-white:before {
-  background-image: url(../images/icon/arrow-top.svg);
-}
 .tekup-default-btn.tekup-header-btn {
   padding: 14px 35px;
 }
 .tekup-default-btn.tekup-header-btn:hover::before {
-  transform: translate(-32px, 22px);
+  transform: translate(-35px, 15px);
 }
 .tekup-default-btn.disabled, .tekup-default-btn:disabled {
   opacity: 1;
@@ -2468,17 +2556,30 @@ header.tekup-header-section.light-color.sticky-menu {
 }
 .tekup-blog-meta ul li a {
   font-size: 20px;
+  transition: all 0.4s;
   color: var(--heading-color);
+}
+.tekup-blog-meta ul li a:hover {
+  color: var(--accent-color);
 }
 .tekup-blog-btn {
   font-weight: 500;
   display: flex;
   align-items: center;
   font-size: 20px;
-  color: var(--heading-color) !important;
+  transition: all 0.4s;
+  color: var(--heading-color);
 }
-.tekup-blog-btn img {
-  margin-left: 12px;
+.tekup-blog-btn i {
+  font-size: 22px;
+  margin-left: 8px;
+  transition: all 0.4s;
+}
+.tekup-blog-btn:hover {
+  color: var(--accent-color);
+}
+.tekup-blog-btn:hover i {
+  transform: rotate(45deg);
 }
 
 .tekup-blog-wrap2 {
@@ -2527,7 +2628,7 @@ header.tekup-header-section.light-color.sticky-menu {
 }
 .tekup-blog-meta2 ul li a {
   font-size: 20px;
-  color: var(--white-color);
+  color: var(--white-color) !important;
 }
 
 input[type=text],
@@ -2658,8 +2759,19 @@ button#header-search {
 
 button#tekup-subscription-btn {
   position: absolute;
-  top: 12px;
+  top: 14px;
   right: 20px;
+}
+button#tekup-subscription-btn i {
+  color: var(--white-color);
+  transition: all 0.4s;
+}
+button#tekup-subscription-btn i:hover {
+  color: var(--accent-color);
+}
+
+.two button#tekup-subscription-btn i {
+  color: var(--accent-color);
 }
 
 .tekup-breadcrumb {
@@ -2896,6 +3008,7 @@ h1.post__title {
 }
 .tekup-hero-rating ul li {
   display: inline-block;
+  color: var(--white-color);
 }
 .tekup-hero-author {
   margin-bottom: 24px;
@@ -2955,8 +3068,13 @@ h1.post__title {
   transition: all 0.4s;
   border-radius: 100%;
   transform: translateY(-50%);
-  background-image: url(../images/v2/arrow-left.png);
+  color: var(--white-color);
   border: 1px solid rgba(255, 255, 255, 0.2);
+}
+.tekup-hero-slider .tekup-hero-next:hover,
+.tekup-hero-slider .tekup-hero-prev:hover {
+  color: var(--accent-color);
+  background-color: var(--white-bg);
 }
 @media (max-width: 767px) {
   .tekup-hero-slider .tekup-hero-next,
@@ -2968,7 +3086,6 @@ h1.post__title {
 .tekup-hero-slider .tekup-hero-prev {
   left: auto;
   right: 60px;
-  background-image: url(../images/v2/arrow-right.png);
 }
 
 .tekup-hero-section3 {
@@ -3005,7 +3122,6 @@ h1.post__title {
 .tekup-client-rating {
   position: absolute;
   bottom: 100px;
-  animation: float-left-right 6s ease-in-out infinite;
   box-shadow: 0px 16px 50px 0px rgba(13, 14, 29, 0.12);
 }
 @media (max-width: 767px) {
@@ -3018,7 +3134,6 @@ h1.post__title {
   position: absolute;
   top: 250px;
   right: 0;
-  animation: float-top-bottom 6s ease-in-out infinite;
   box-shadow: 0px 16px 50px 0px rgba(13, 14, 29, 0.12);
 }
 @media (max-width: 767px) {
@@ -3660,11 +3775,21 @@ h1.post__title {
   display: inline-flex;
   font-weight: 600;
   font-size: 20px;
+  transition: all 0.4s;
   align-items: center;
-  color: var(--heading-color) !important;
+  color: var(--heading-color);
 }
-.tekup-iconbox-btn img {
-  margin-left: 12px;
+.tekup-iconbox-btn i {
+  font-size: 20px;
+  margin-left: 10px;
+  transition: all 0.4s;
+}
+.tekup-iconbox-btn:hover {
+  color: var(--accent-color);
+}
+.tekup-iconbox-btn:hover i {
+  color: var(--accent-color);
+  transform: rotate(45deg);
 }
 
 .tekup-service-thumb {
@@ -3862,8 +3987,12 @@ h1.post__title {
   border-radius: 100%;
   transform: translateY(-50%);
   background-color: var(--white-bg);
-  background-image: url(../images/v2/arrow-left.svg);
   box-shadow: 0px 16px 50px 0px rgba(13, 14, 29, 0.12);
+}
+.tekup-t-two-column-slider .tekup-t-next:hover,
+.tekup-t-two-column-slider .tekup-t-prev:hover {
+  color: var(--white-color);
+  background-color: var(--accent-bg);
 }
 @media (max-width: 767px) {
   .tekup-t-two-column-slider .tekup-t-next,
@@ -3875,7 +4004,6 @@ h1.post__title {
 .tekup-t-two-column-slider .tekup-t-prev {
   left: auto;
   right: -30px;
-  background-image: url(../images/v2/arrow-right.svg);
 }
 
 .tekup-cta-wrap {
@@ -3945,6 +4073,9 @@ h1.post__title {
   color: var(--white-color);
   background: var(--accent-bg);
 }
+.tekup-social-icon-box ul li a i {
+  font-size: 20px;
+}
 .tekup-social-icon-box.style-two ul li a {
   color: var(--white-color);
   background: #1F202E;
@@ -3995,7 +4126,7 @@ h1.post__title {
   margin-right: 0;
 }
 .tekup-social-icon ul li a {
-  font-size: 16px;
+  font-size: 20px;
   transition: all 0.4s;
   color: var(--white-color);
 }
@@ -4024,10 +4155,11 @@ h1.post__title {
 .tekup-icon-list ul li:last-child {
   margin-bottom: 0;
 }
-.tekup-icon-list ul li img {
+.tekup-icon-list ul li i {
   left: 0;
-  top: 10px;
+  top: 0;
   position: absolute;
+  color: var(--accent-color);
 }
 
 .tekup-icon-list-item {
@@ -4067,9 +4199,36 @@ h1.post__title {
   font-size: 20px;
   font-weight: 400;
 }
-.tekup-pricing-btn .tekup-default-btn {
+.tekup-pricing-btn {
   width: 100%;
-  justify-content: space-between;
+  display: flex;
+  font-size: 20px;
+  font-weight: 500;
+  padding: 13px;
+  transition: all 0.4s;
+  align-items: center;
+  justify-content: center;
+  color: var(--heading-color);
+  border: 1px solid var(--heading-color);
+}
+.tekup-pricing-btn:hover {
+  color: var(--white-color);
+  background-color: var(--accent-bg);
+  border: 1px solid var(--accent-color);
+}
+.tekup-pricing-btn i {
+  margin-left: 10px;
+  font-size: 22px;
+}
+.tekup-pricing-btn.active {
+  color: var(--white-color);
+  background-color: var(--accent-bg);
+  border: 1px solid var(--accent-color);
+}
+.tekup-pricing-btn.active:hover {
+  color: var(--white-color);
+  background-color: var(--dark-bg);
+  border: 1px solid var(--heading-color);
 }
 .tekup-pricing-feature {
   margin-top: 40px;
@@ -4084,10 +4243,12 @@ h1.post__title {
 .tekup-pricing-feature ul li:last-child {
   margin-bottom: 0;
 }
-.tekup-pricing-feature ul li img {
-  position: absolute;
+.tekup-pricing-feature ul li i {
   left: 0;
-  top: 9px;
+  top: 0;
+  font-size: 24px;
+  position: absolute;
+  color: var(--accent-color);
 }
 
 .tekup-portfolio-slider .slick-slide {
@@ -4154,6 +4315,10 @@ h1.post__title {
   right: 24px;
   position: absolute;
 }
+.tekup-portfolio-btn i {
+  font-size: 30px;
+  color: var(--accent-color);
+}
 
 .tekup-portfolio-wrap2 {
   margin-bottom: 24px;
@@ -4168,6 +4333,9 @@ h1.post__title {
 .tekup-portfolio-btn2 {
   top: 0;
   right: 0;
+}
+.tekup-portfolio-btn2 i {
+  color: var(--white-color);
 }
 
 .tekup-center-btn {
@@ -4196,7 +4364,6 @@ h1.post__title {
   bottom: 24px;
   left: 24px;
   position: absolute;
-  animation: float-top-bottom 6s ease-in-out infinite;
   box-shadow: 0px 16px 50px 0px rgba(13, 14, 29, 0.12);
 }
 @media (max-width: 575px) {

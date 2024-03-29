@@ -78,8 +78,8 @@
         autoplay: false,
         speed: 800,
         lazyLoad: 'progressive',
-        prevArrow: '<button class="slide-arrow tekup-hero-next"></button>',
-        nextArrow: '<button class="slide-arrow tekup-hero-prev"></button>'
+        prevArrow: '<button class="slide-arrow tekup-hero-next"><i class="ri-arrow-left-s-line"></i></button>',
+        nextArrow: '<button class="slide-arrow tekup-hero-prev"><i class="ri-arrow-right-s-line"></i></button>'
       }).slickAnimation();
     }
 
@@ -163,8 +163,8 @@
         dots: false,
         autoplay: false,
         speed: 800,
-        prevArrow: '<button class="slide-arrow tekup-t-next"></button>',
-        nextArrow: '<button class="slide-arrow tekup-t-prev"></button>'
+        prevArrow: '<button class="slide-arrow tekup-t-next"><i class="ri-arrow-left-s-line"></i></button>',
+        nextArrow: '<button class="slide-arrow tekup-t-prev"><i class="ri-arrow-right-s-line"></i></button>'
       });
     }
 
