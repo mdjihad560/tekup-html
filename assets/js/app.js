@@ -38,7 +38,7 @@
     /*--------------------------------------------------------------
     HEADER SEARCH JS INIT
     ------------------------------------------------------------*/
-    $(".tekup-header-search, .tekup-header-search-close").click(function () {
+    $(".tekup-header-search, .tekup-header-search-close, .search-overlay").click(function () {
       $(".tekup-header-search-section, .search-overlay").toggleClass("open");
     });
 
