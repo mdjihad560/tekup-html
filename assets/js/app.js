@@ -214,6 +214,24 @@
     /*--------------------------------------------------------------
     tekup BRAND SLIDER ONE
     --------------------------------------------------------------*/
+    var t_t_slider = $('.tekup-testimonial-slider');
+    if (t_t_slider.is_exist()) {
+      t_t_slider.slick({
+        infinite: true,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        arrows: true,
+        dots: false,
+        autoplay: false,
+        speed: 800,
+        prevArrow: '<button class="slide-arrow tekup-t-next"><i class="ri-arrow-left-s-line"></i></button>',
+        nextArrow: '<button class="slide-arrow tekup-t-prev"><i class="ri-arrow-right-s-line"></i></button>'
+      });
+    }
+
+    /*--------------------------------------------------------------
+    tekup BRAND SLIDER ONE
+    --------------------------------------------------------------*/
     var tekup_brand_slider = $('.tekup-brand-slider');
     if (tekup_brand_slider.is_exist()) {
       tekup_brand_slider.slick({
@@ -237,6 +255,47 @@
           breakpoint: 767,
           settings: {
             slidesToShow: 2
+          }
+        }]
+      });
+    }
+
+    /*--------------------------------------------------------------
+    tekup BRAND SLIDER ONE
+    --------------------------------------------------------------*/
+    var p_slider = $('.tekup-team-slider');
+    if (p_slider.is_exist()) {
+      p_slider.slick({
+        infinite: true,
+        slidesToShow: 6,
+        slidesToScroll: 1,
+        arrows: false,
+        dots: true,
+        autoplay: false,
+        responsive: [{
+          breakpoint: 1400,
+          settings: {
+            slidesToShow: 4
+          }
+        }, {
+          breakpoint: 1199,
+          settings: {
+            slidesToShow: 3
+          }
+        }, {
+          breakpoint: 992,
+          settings: {
+            slidesToShow: 2
+          }
+        }, {
+          breakpoint: 767,
+          settings: {
+            slidesToShow: 2
+          }
+        }, {
+          breakpoint: 575,
+          settings: {
+            slidesToShow: 1
           }
         }]
       });
@@ -403,9 +462,9 @@
         position: new google.maps.LatLng(40.6700, -73.9400),
         map: map,
         // icon: 'assets/images/all-img/contact/map.png',
-        title: 'fugu'
+        title: 'tekup'
       });
-      var contentString = '<div id="content">' + '<div id="tpw">' + '<h3>fugu' + '</div>';
+      var contentString = '<div id="content">' + '<div id="tpw">' + '<h3>tekup' + '</div>';
       var infowindow = new google.maps.InfoWindow({
         content: contentString,
         maxWidth: 280
