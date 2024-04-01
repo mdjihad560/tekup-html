@@ -263,7 +263,7 @@
     /*--------------------------------------------------------------
     tekup BRAND SLIDER ONE
     --------------------------------------------------------------*/
-    var p_slider = $('.tekup-team-slider');
+    var p_slider = $('.tekup-six-column-slider');
     if (p_slider.is_exist()) {
       p_slider.slick({
         infinite: true,
