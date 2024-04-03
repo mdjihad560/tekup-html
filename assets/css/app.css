@@ -667,16 +667,15 @@ img {
 }
 
 blockquote {
-  font-weight: 700;
   position: relative;
-  font-size: 24px;
+  font-size: 26px;
   line-height: 30px;
-  border-radius: 10px;
   padding: 30px;
   margin: 0 0 24px;
-  color: var(--white-smoke);
+  border-left: 5px solid var(--accent-color);
+  color: var(--accent-color);
   font-family: "Afacad", sans-serif;
-  background-color: var(--dark-bg);
+  background: linear-gradient(90deg, rgba(1, 25, 255, 0.1) 0%, rgba(1, 25, 255, 0) 100%);
 }
 
 .border-transparent {
@@ -1903,9 +1902,19 @@ header.tekup-header-section.light-color.sticky-menu {
   gap: 24px;
   margin-left: 20px;
 }
+@media (max-width: 991px) {
+  .tekup-header-icon {
+    margin-left: 0;
+  }
+}
 
 .site-header--menu-right .tekup-header-icon {
   margin-left: 50px;
+}
+@media (max-width: 991px) {
+  .site-header--menu-right .tekup-header-icon {
+    margin-left: 0;
+  }
 }
 
 .site-header .mobile-menu-trigger.light span {
@@ -2613,6 +2622,17 @@ header.tekup-header-section.light-color.sticky-menu {
 .tekup-blog-content {
   padding: 24px;
 }
+.tekup-blog-content h2 {
+  margin-bottom: 15px;
+}
+.tekup-blog-content.blog-page-content {
+  padding: 40px;
+}
+@media (max-width: 991px) {
+  .tekup-blog-content.blog-page-content {
+    padding: 30px;
+  }
+}
 .tekup-blog-meta {
   margin-bottom: 15px;
 }
@@ -2977,16 +2997,41 @@ h1.post__title {
   color: var(--white-color);
 }
 
+.tekup-errors-section {
+  padding: 330px 0 130px;
+}
+@media (max-width: 991px) {
+  .tekup-errors-section {
+    padding: 250px 0 100px;
+  }
+}
+@media (max-width: 767px) {
+  .tekup-errors-section {
+    padding: 170px 0 80px;
+  }
+}
+.tekup-errors-content {
+  max-width: 650px;
+  margin: 0 auto;
+  text-align: center;
+}
+.tekup-errors-content img {
+  margin-bottom: 40px;
+}
+.tekup-errors-content h2 {
+  margin-bottom: 15px;
+}
+
 .tekup-navigation {
-  margin-top: 80px;
+  margin-top: 56px;
   text-align: center;
 }
 @media (max-width: 991px) {
   .tekup-navigation {
-    margin-top: 60px;
+    margin-top: 36px;
   }
 }
-.tekup-navigation .pagination {
+.tekup-navigation .pagination.center {
   justify-content: center;
 }
 
@@ -2994,33 +3039,32 @@ h1.post__title {
 .page-links .current {
   cursor: not-allowed;
   background-color: var(--accent-color);
-  color: var(--heading-color);
-  border-color: var(--accent-color);
+  color: var(--white-color);
 }
 
 .tekup-navigation a,
 .tekup-navigation span,
 .page-links a,
 .page-links span {
-  height: 50px;
-  width: 50px;
+  height: 60px;
+  width: 60px;
+  font-weight: 500;
   display: inline-flex;
   text-align: center;
-  line-height: 50px;
-  font-size: 21px;
+  line-height: 60px;
+  font-size: 20px;
   align-items: center;
   justify-content: center;
   margin: 0 5px;
   color: var(--body-color);
   border-radius: 50px;
-  border: 1px solid var(--heading-color);
+  background-color: var(--light-bg1);
 }
 
 .tekup-navigation a:hover,
 .page-links a:hover {
-  background-color: var(--accent-color);
-  color: var(--heading-color);
-  border-color: var(--accent-color);
+  background-color: var(--accent-bg);
+  color: var(--white-color);
 }
 
 .tekup-extra-mt {
@@ -4137,7 +4181,7 @@ h1.post__title {
 .tekup-accordion-item.open .tekup-accordion-body {
   display: block;
 }
-.tekup-accordion-item.open .tekup-accordion-header h6 {
+.tekup-accordion-item.open .tekup-accordion-header h5, .tekup-accordion-item.open .tekup-accordion-header h6 {
   color: var(--accent-color);
 }
 .tekup-accordion-item.open .tekup-accordion-header:before {
@@ -4223,6 +4267,26 @@ h1.post__title {
 .tekup-accordion-body2 p {
   font-size: 20px;
   line-height: 30px;
+}
+
+.tekup-accordion-column {
+  max-width: 856px;
+  margin: 0 auto;
+}
+.tekup-accordion-column .tekup-accordion-item {
+  border: 1px solid rgb(231, 231, 232);
+}
+.tekup-accordion-column .tekup-accordion-body {
+  padding-right: 50px;
+}
+@media (max-width: 991px) {
+  .tekup-accordion-column .tekup-accordion-body {
+    padding-right: 0;
+  }
+}
+.tekup-accordion-column .tekup-accordion-body p {
+  font-size: 22px;
+  line-height: 32px;
 }
 
 .tekup-video-wrap {
@@ -4737,6 +4801,11 @@ h1.post__title {
 .tekup-pricing-btn i {
   margin-left: 10px;
   font-size: 22px;
+  transition: all 0.4s;
+}
+.tekup-pricing-btn:hover i {
+  color: var(--white-color);
+  transform: rotate(45deg);
 }
 .tekup-pricing-btn.active {
   color: var(--white-color);
@@ -4830,7 +4899,7 @@ h1.post__title {
 }
 .tekup-portfolio-btn {
   top: 30px;
-  right: 24px;
+  right: 15px;
   position: absolute;
 }
 .tekup-portfolio-btn i {
@@ -4841,18 +4910,56 @@ h1.post__title {
 .tekup-portfolio-wrap2 {
   margin-bottom: 24px;
 }
+.tekup-portfolio-thumb2 {
+  position: relative;
+}
+.tekup-portfolio-thumb2:before {
+  content: "";
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  transition: all 0.4s;
+  position: absolute;
+  opacity: 0;
+  background: linear-gradient(180deg, rgba(1, 25, 255, 0) 0%, #0119FF 100%);
+}
+.tekup-portfolio-thumb2:hover .tekup-portfolio-data2 {
+  opacity: 1;
+  visibility: visible;
+  bottom: 28px;
+}
+.tekup-portfolio-thumb2:hover::before {
+  opacity: 1;
+}
 .tekup-portfolio-data2 {
-  padding: 0;
+  left: 28px;
+  bottom: 0;
+  width: calc(100% - 56px);
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.4s;
+  position: absolute;
   background-color: transparent;
 }
 .tekup-portfolio-data2 h5, .tekup-portfolio-data2 p {
   color: var(--white-color);
 }
+.tekup-portfolio-data2 h5 {
+  margin-bottom: 10px;
+}
+.tekup-portfolio-data2 p {
+  font-size: 20px;
+  margin: 0;
+  line-height: 20px;
+}
 .tekup-portfolio-btn2 {
-  top: 0;
+  top: 10px;
   right: 0;
+  position: absolute;
 }
 .tekup-portfolio-btn2 i {
+  font-size: 30px;
   color: var(--white-color);
 }
 
@@ -4923,6 +5030,232 @@ h1.post__title {
 }
 .slider-three .slick-dots {
   margin-top: 0;
+}
+
+.tekup-portfolio-wrap4 {
+  margin-bottom: 24px;
+}
+.tekup-portfolio-thumb4 {
+  position: relative;
+}
+.tekup-portfolio-thumb4:before {
+  content: "";
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  transition: all 0.4s;
+  position: absolute;
+  opacity: 0;
+  background: linear-gradient(180deg, rgba(1, 25, 255, 0) 0%, #0119FF 100%);
+}
+.tekup-portfolio-thumb4::after {
+  content: "";
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  transition: all 0.4s;
+  position: absolute;
+  background: linear-gradient(180deg, rgba(13, 14, 29, 0) 0%, #0D0E1D 100%);
+}
+.tekup-portfolio-thumb4:hover::before {
+  opacity: 1;
+}
+.tekup-portfolio-thumb4:hover::after {
+  opacity: 0;
+}
+.tekup-portfolio-thumb4:hover .tekup-portfolio-btn4 {
+  opacity: 1;
+}
+.tekup-portfolio-data4 {
+  bottom: 28px;
+  left: 28px;
+  z-index: 1;
+  width: calc(100% - 56px);
+  position: absolute;
+  transition: all 0.4s;
+}
+.tekup-portfolio-data4 h5, .tekup-portfolio-data4 p {
+  color: var(--white-color);
+}
+.tekup-portfolio-data4 h5 {
+  margin-bottom: 10px;
+}
+.tekup-portfolio-data4 p {
+  font-size: 20px;
+  margin: 0;
+  line-height: 20px;
+}
+.tekup-portfolio-btn4 {
+  top: 10px;
+  right: 0;
+  opacity: 0;
+  transition: all 0.4s;
+  position: absolute;
+}
+.tekup-portfolio-btn4 i {
+  font-size: 30px;
+  color: var(--white-color);
+}
+
+.tekup-portfolio-column {
+  margin-left: -24px;
+}
+
+.tekup-portfolio-column .tekup-portfolio-wrap,
+.tekup-portfolio-column .tekup-portfolio-wrap4 {
+  margin-left: 24px;
+  margin-bottom: 24px;
+}
+
+.tekup-portfolio-menu {
+  max-width: 856px;
+  margin: 0 auto;
+  margin-bottom: 50px;
+  border-bottom: 1px solid #E7E7E8;
+}
+@media (max-width: 575px) {
+  .tekup-portfolio-menu {
+    border: 0;
+  }
+}
+
+.tekup-portfolio-menu ul {
+  display: flex;
+  justify-content: space-between;
+}
+@media (max-width: 575px) {
+  .tekup-portfolio-menu ul {
+    display: block;
+  }
+}
+.tekup-portfolio-menu ul li {
+  cursor: pointer;
+  font-weight: 600;
+  padding-bottom: 24px;
+  display: inline-block;
+  color: var(--heading-color);
+  position: relative;
+}
+@media (max-width: 767px) {
+  .tekup-portfolio-menu ul li {
+    font-size: 20px;
+  }
+}
+@media (max-width: 575px) {
+  .tekup-portfolio-menu ul li {
+    display: block;
+    text-align: center;
+    padding-bottom: 15px;
+    margin-bottom: 15px;
+    border-bottom: 2px solid #E7E7E8;
+  }
+}
+.tekup-portfolio-menu ul li:before {
+  content: "";
+  left: 0;
+  bottom: -1px;
+  width: 0;
+  height: 2px;
+  transition: all 0.4s;
+  position: absolute;
+  background-color: var(--accent-color);
+}
+.tekup-portfolio-menu ul li.active::before {
+  width: 100%;
+}
+
+.tekup-portfolio-menu ul li:first-child {
+  margin-left: 0;
+}
+
+.tekup-portfolio-menu ul li:last-child {
+  margin-right: 0;
+}
+
+.tekup-portfolio-menu ul li.active {
+  color: var(--accent-color);
+  position: relative;
+  transition: all 0.4s;
+}
+
+.collection-grid-item-w2 {
+  overflow: hidden;
+  max-width: 100%;
+}
+
+.tekup-pd-wrap {
+  padding: 50px 0 80px;
+}
+@media (max-width: 991px) {
+  .tekup-pd-wrap {
+    padding: 40px 0;
+  }
+}
+.tekup-pd-wrap .tekup-icon-list {
+  margin-bottom: 40px;
+}
+@media (max-width: 991px) {
+  .tekup-pd-wrap .tekup-icon-list {
+    margin-bottom: 24px;
+  }
+}
+
+.tekup-pd-content-item {
+  margin-bottom: 40px;
+}
+.tekup-pd-content-item:last-child {
+  margin-bottom: 0;
+}
+@media (max-width: 991px) {
+  .tekup-pd-content-item {
+    margin-bottom: 24px;
+  }
+}
+@media (max-width: 991px) {
+  .tekup-pd-content-item img {
+    margin-bottom: 24px;
+  }
+}
+.tekup-pd-content-item h3 {
+  font-size: 36px;
+  margin-bottom: 15px;
+}
+@media (max-width: 991px) {
+  .tekup-pd-content-item h3 {
+    font-size: 30px;
+  }
+}
+
+.tekup-pd-sidebar {
+  padding: 30px;
+  margin-left: 30px;
+  background-color: var(--light-bg1);
+}
+@media (max-width: 991px) {
+  .tekup-pd-sidebar {
+    margin-left: 0;
+    margin-top: 40px;
+  }
+}
+.tekup-pd-sidebar-item {
+  margin-bottom: 22px;
+}
+.tekup-pd-sidebar-item h5 {
+  margin-bottom: 20px;
+}
+.tekup-pd-sidebar-item span {
+  font-weight: 600;
+  margin-bottom: 5px;
+  display: block;
+  line-height: 1em;
+}
+.tekup-pd-sidebar-item p {
+  line-height: 22px;
+}
+.tekup-pd-sidebar-item a {
+  color: var(--accent-color);
 }
 
 .tekup-thumb {
@@ -5047,6 +5380,20 @@ p.skillbar-lable {
 @media (max-width: 767px) {
   .tekup-section-padding3 {
     padding: 50px 0;
+  }
+}
+
+.tekup-section-padding4 {
+  padding: 130px 0 106px;
+}
+@media (max-width: 991px) {
+  .tekup-section-padding4 {
+    padding: 100px 0 76px;
+  }
+}
+@media (max-width: 767px) {
+  .tekup-section-padding4 {
+    padding: 80px 0 56px;
   }
 }
 
@@ -5378,6 +5725,331 @@ p.skillbar-lable {
   .tekup-story-content p:last-child {
     margin-bottom: 0;
   }
+}
+
+.tekup-blog-sidebar {
+  padding-left: 20px;
+}
+@media (max-width: 991px) {
+  .tekup-blog-sidebar {
+    padding-left: 0;
+    margin-top: 40px;
+  }
+}
+.tekup-blog-widgets {
+  padding: 30px;
+  margin-bottom: 24px;
+  background-color: var(--light-bg1);
+}
+.tekup-blog-widgets h5 {
+  margin-bottom: 20px;
+}
+.tekup-blog-widgets:last-child {
+  margin-bottom: 0;
+}
+
+.tekup-search-box {
+  position: relative;
+}
+.tekup-search-box input {
+  padding: 15px !important;
+  padding-left: 50px !important;
+  font-size: 20px;
+  height: 60px;
+  border: 1px solid #E7E7E8 !important;
+  background-color: var(--white-bg);
+}
+.tekup-search-box input::placeholder {
+  color: rgba(13, 14, 29, 0.6);
+}
+.tekup-search-box input:focus {
+  border: 1px solid var(--accent-color) !important;
+}
+
+button#tekup-search-btn {
+  position: absolute;
+  left: 20px;
+  top: 14px;
+}
+
+.tekup-blog-categorie ul li {
+  padding-bottom: 12px;
+}
+.tekup-blog-categorie ul li:last-child {
+  padding-bottom: 0;
+}
+.tekup-blog-categorie ul li a {
+  display: flex;
+  font-size: 20px;
+  transition: all 0.4s;
+  justify-content: space-between;
+  color: var(--heading-color);
+}
+.tekup-blog-categorie ul li a span {
+  font-weight: 500;
+}
+.tekup-blog-categorie ul li a:hover {
+  color: var(--accent-color);
+}
+.tekup-blog-tags ul li {
+  margin-right: 4px;
+  margin-bottom: 8px;
+  display: inline-block;
+}
+.tekup-blog-tags ul li a {
+  padding: 5px 16px;
+  font-size: 18px;
+  display: block;
+  transition: all 0.4s;
+  color: var(--heading-color);
+  background-color: var(--white-bg);
+}
+.tekup-blog-tags ul li a:hover {
+  color: var(--white-color);
+  background-color: var(--accent-bg);
+}
+
+.tekup-recent-post-item {
+  gap: 20px;
+  display: grid;
+  align-items: center;
+  overflow: hidden;
+  margin-bottom: 24px;
+  grid-template-columns: 96px 1fr;
+}
+.tekup-recent-post-item:last-child {
+  margin-bottom: 0;
+}
+.tekup-recent-post-data p {
+  font-weight: 600;
+  margin-bottom: 5px;
+  line-height: 28px;
+  color: var(--heading-color);
+  display: block;
+  display: -webkit-box;
+  max-width: 100%;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.tekup-recent-post-data span {
+  font-size: 18px;
+  color: var(--heading-color);
+}
+
+.tekup-single-post-meta {
+  padding-top: 35px;
+  padding-bottom: 15px;
+  margin-bottom: 24px;
+  border-bottom: 1px solid #E7E7E8;
+}
+.tekup-single-post-meta ul li {
+  position: relative;
+  padding-left: 28px;
+  display: inline-block;
+  margin-right: 25px;
+}
+.tekup-single-post-meta ul li:last-child {
+  margin-right: 0;
+}
+.tekup-single-post-meta ul li a {
+  font-size: 20px;
+  color: var(--heading-color);
+}
+.tekup-single-post-meta ul li a i {
+  position: absolute;
+  left: 0;
+  color: var(--accent-color);
+}
+
+.tekup-single-thumb {
+  padding: 16px 0;
+}
+.tekup-single-thumb img {
+  margin-bottom: 24px;
+}
+
+.tekup-single-post-tag-wrap {
+  margin-top: 40px;
+  margin-bottom: 52px;
+}
+@media (max-width: 991px) {
+  .tekup-single-post-tag-wrap {
+    margin: 30px 0;
+  }
+}
+.tekup-single-post-tag-wrap .tekup-blog-tags ul li a {
+  background-color: var(--light-bg1);
+}
+.tekup-single-post-tag-wrap .tekup-blog-tags ul li a:hover {
+  background-color: var(--accent-bg);
+}
+
+.tekup-post-navigation {
+  display: flex;
+  padding: 30px 0;
+  flex-wrap: wrap;
+  gap: 24px;
+  justify-content: space-between;
+  border-top: 1px solid #E7E7E8;
+  border-bottom: 1px solid #E7E7E8;
+}
+
+a.nav-previous,
+a.nav-next {
+  max-width: 300px;
+  font-size: 20px;
+  transition: all 0.4s;
+  color: var(--heading-color);
+}
+a.nav-previous:hover,
+a.nav-next:hover {
+  color: var(--accent-color);
+}
+a.nav-previous h5,
+a.nav-next h5 {
+  margin-top: 5px;
+  margin-bottom: 0;
+}
+
+.tekup-post-comment {
+  padding-top: 60px;
+}
+.tekup-post-comment li {
+  margin-bottom: 40px;
+}
+.tekup-post-comment h3 {
+  margin-bottom: 30px;
+  font-size: 36px;
+}
+@media (max-width: 767px) {
+  .tekup-post-comment h3 {
+    font-size: 30px;
+  }
+}
+.tekup-post-comment-wrap {
+  display: flex;
+}
+.tekup-post-comment-thumb {
+  width: 80px;
+  height: 80px;
+  flex-shrink: 0;
+  overflow: hidden;
+  border-radius: 100%;
+  margin-right: 20px;
+}
+.tekup-post-comment-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.tekup-post-comment-data {
+  position: relative;
+}
+.tekup-post-comment-data strong {
+  display: block;
+  font-size: 22px;
+  line-height: 1;
+  margin-bottom: 5px;
+}
+.tekup-post-comment-data span {
+  font-weight: 400;
+  font-size: 20px;
+  display: block;
+}
+.tekup-post-comment .children {
+  padding-left: 85px;
+}
+@media (max-width: 767px) {
+  .tekup-post-comment .children {
+    padding-left: 0;
+  }
+}
+
+a.tekup-comment-reply {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  font-size: 20px;
+  font-weight: 600;
+  transition: all 0.4s;
+  color: var(--body-color);
+  display: flex;
+  align-items: center;
+}
+a.tekup-comment-reply svg {
+  margin-right: 10px;
+}
+a.tekup-comment-reply:hover svg path {
+  fill: var(--accent-color);
+}
+a.tekup-comment-reply:hover {
+  color: var(--accent-color);
+}
+
+.tekup-comment-box {
+  padding-top: 40px;
+}
+@media (max-width: 991px) {
+  .tekup-comment-box {
+    padding-top: 10px;
+  }
+}
+.tekup-comment-box h3 {
+  font-size: 36px;
+  margin-bottom: 25px;
+}
+@media (max-width: 767px) {
+  .tekup-comment-box h3 {
+    font-size: 30px;
+  }
+}
+
+.tekup-comment-form {
+  margin-bottom: 24px;
+}
+
+.tekup-check input {
+  padding: 0;
+  height: initial;
+  width: initial;
+  margin-bottom: 0;
+  display: none;
+  cursor: pointer;
+}
+
+.tekup-check label {
+  position: relative;
+  cursor: pointer;
+  margin-bottom: 40px;
+}
+
+.tekup-check label:before {
+  content: "";
+  -webkit-appearance: none;
+  background-color: transparent;
+  border: 2px solid #0D0E1D;
+  padding: 6px;
+  display: inline-block;
+  position: relative;
+  vertical-align: middle;
+  cursor: pointer;
+  margin-right: 12px;
+  margin-top: -5px;
+}
+
+.tekup-check input:checked + label:after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 11px;
+  left: 6px;
+  width: 5px;
+  height: 8px;
+  border: solid var(--accent-color);
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
 }
 
 .tekup-main-form {

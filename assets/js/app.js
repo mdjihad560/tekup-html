@@ -5,19 +5,24 @@
 
   /*------------------------------------------------------------------
   [Table of contents]
-  tekup PRELOADER JS INIT
-  tekup SKILLBAR JS INIT
-  tekup MENU SIDEBAR JS INIT
-  tekup COUNTER JS INIT
-  tekup IMAGE ROTATE JS INIT
-  tekup AUTO SLIDER JS INIT
-  tekup PROJECT SLIDER JS INIT
-  tekup PROJECT SLIDER2 JS INIT
-  tekup MAGNIFIC POPUP JS INIT
-  tekup IMAGE SWIPE HOVER JS INIT
-  tekup PRICING TABLE JS INIT
-  tekup MAP JS
-  tekup wow js
+  TEKUP PRELOADER JS INIT
+  TEKUP HEADER SEARCH JS INIT
+  TEKUP STICKY MENU JS INIT
+  TEKUP MENU SIDEBAR JS INIT
+  TEKUP SKILLBAR JS INIT
+  TEKUP HERO SLIDER INIT
+  TEKUP FOUR COLUMN SLIDER INIT
+  TEKUP PORTFOLIO SLIDER INIT
+  TEKUP PORTFOLIO SLIDER TWO INIT
+  TEKUP TESTIMONIAL TWO COLUMN SLIDER INIT
+  TEKUP TESTIMONIAL SLIDER INIT
+  TEKUP BRAND SLIDER INIT
+  TEKUP SIX COLUMN SLIDER INIT
+  TEKUP COUNTER JS INIT
+  TEKUP MAGNIFIC POPUP JS INIT
+  TEKUP PORTFOLIO GRID FILTER JS
+  TEKUP PORTFOLIO MASONAY FILTER JS
+  TEKUP WOW JS
   
   -------------------------------------------------------------------*/
 
@@ -30,20 +35,20 @@
   };
   $(function () {
     /*--------------------------------------------------------------
-    tekup PRELOADER JS INIT
+    TEKUP PRELOADER JS INIT
     --------------------------------------------------------------*/
 
     $(".tekup-preloader-wrap").fadeOut(500);
 
     /*--------------------------------------------------------------
-    HEADER SEARCH JS INIT
+    TEKUP HEADER SEARCH JS INIT
     ------------------------------------------------------------*/
     $(".tekup-header-search, .tekup-header-search-close, .search-overlay").click(function () {
       $(".tekup-header-search-section, .search-overlay").toggleClass("open");
     });
 
     /*--------------------------------------------------------------
-    tekup STICKY MENU JS INIT
+    TEKUP STICKY MENU JS INIT
     --------------------------------------------------------------*/
     $(window).on('scroll', function () {
       if ($(window).scrollTop() > 50) {
@@ -54,7 +59,7 @@
     });
 
     /*--------------------------------------------------------------
-    tekup MENU SIDEBAR JS INIT
+    TEKUP MENU SIDEBAR JS INIT
     --------------------------------------------------------------*/
     $(".tekup-header-barger").on("click", function (e) {
       $(".tekup-sidemenu-column, .offcanvas-overlay").addClass("active");
@@ -65,7 +70,7 @@
     });
 
     /*--------------------------------------------------------------
-    SKILLBAR JS INIT
+    TEKUP SKILLBAR JS INIT
     ------------------------------------------------------------*/
 
     var skillbar = $('.skillbar');
@@ -77,7 +82,7 @@
     }
 
     /*--------------------------------------------------------------
-    tekup BRAND SLIDER ONE
+    TEKUP HERO SLIDER INIT
     --------------------------------------------------------------*/
     var hero_slider = $('.tekup-hero-slider');
     if (hero_slider.is_exist()) {
@@ -96,7 +101,7 @@
     }
 
     /*--------------------------------------------------------------
-    tekup BRAND SLIDER ONE
+    TEKUP FOUR COLUMN SLIDER INIT
     --------------------------------------------------------------*/
     var four_column_slider = $('.tekup-4column-slider');
     if (four_column_slider.is_exist()) {
@@ -127,7 +132,7 @@
     }
 
     /*--------------------------------------------------------------
-    tekup BRAND SLIDER ONE
+    TEKUP PORTFOLIO SLIDER INIT
     --------------------------------------------------------------*/
     var p_slider = $('.tekup-portfolio-slider');
     if (p_slider.is_exist()) {
@@ -163,7 +168,7 @@
     }
 
     /*--------------------------------------------------------------
-    tekup BRAND SLIDER ONE
+    TEKUP PORTFOLIO SLIDER TWO INIT
     --------------------------------------------------------------*/
     var p_slider = $('.tekup-portfolio-slider2');
     if (p_slider.is_exist()) {
@@ -194,7 +199,7 @@
     }
 
     /*--------------------------------------------------------------
-    tekup BRAND SLIDER ONE
+    TEKUP TESTIMONIAL TWO COLUMN SLIDER INIT
     --------------------------------------------------------------*/
     var t_t_slider = $('.tekup-t-two-column-slider');
     if (t_t_slider.is_exist()) {
@@ -212,7 +217,7 @@
     }
 
     /*--------------------------------------------------------------
-    tekup BRAND SLIDER ONE
+    TEKUP TESTIMONIAL SLIDER INIT
     --------------------------------------------------------------*/
     var t_t_slider = $('.tekup-testimonial-slider');
     if (t_t_slider.is_exist()) {
@@ -230,7 +235,7 @@
     }
 
     /*--------------------------------------------------------------
-    tekup BRAND SLIDER ONE
+    TEKUP BRAND SLIDER INIT
     --------------------------------------------------------------*/
     var tekup_brand_slider = $('.tekup-brand-slider');
     if (tekup_brand_slider.is_exist()) {
@@ -261,7 +266,7 @@
     }
 
     /*--------------------------------------------------------------
-    tekup BRAND SLIDER ONE
+    TEKUP SIX COLUMN SLIDER INIT
     --------------------------------------------------------------*/
     var p_slider = $('.tekup-six-column-slider');
     if (p_slider.is_exist()) {
@@ -302,7 +307,7 @@
     }
 
     /*--------------------------------------------------------------
-    tekup COUNTER JS INIT
+    TEKUP COUNTER JS INIT
     --------------------------------------------------------------*/
     var tekup_counter = $('#tekup-counter');
     if (tekup_counter.is_exist()) {
@@ -334,7 +339,7 @@
     }
 
     /*--------------------------------------------------------------
-    tekup MAGNIFIC POPUP JS INIT
+    TEKUP MAGNIFIC POPUP JS INIT
     ------------------------------------------------------------*/
     var popup_youtube = $('.video-init');
     if (popup_youtube.is_exist()) {
@@ -347,10 +352,158 @@
 
   $(window).on("resize", function () {}); // end window resize
 
-  $(window).on("load", function () {}); // End window LODE
+  $(window).on("load", function () {
+    /*--------------------------------------------------------------
+    TEKUP PORTFOLIO GRID FILTER JS
+    ------------------------------------------------------------*/
+    var tekup_filter_gallery = $('#tekup-portfolio-grid');
+    if (tekup_filter_gallery.is_exist()) {
+      var $container = $(tekup_filter_gallery),
+        colWidth = function colWidth() {
+          var w = $container.width(),
+            columnNum = 1,
+            columnWidth = 0;
+          if (w > 1200) {
+            columnNum = 3;
+          } else if (w > 900) {
+            columnNum = 3;
+          } else if (w > 600) {
+            columnNum = 2;
+          } else if (w > 450) {
+            columnNum = 1;
+          } else if (w > 385) {
+            columnNum = 1;
+          }
+          columnWidth = Math.floor(w / columnNum);
+          $container.find('.collection-grid-item').each(function () {
+            var $item = $(this),
+              multiplier_w = $item.attr('class').match(/collection-grid-item-w(\d)/),
+              multiplier_h = $item.attr('class').match(/collection-grid-item-h(\d)/),
+              width = multiplier_w ? columnWidth * multiplier_w[1] : columnWidth,
+              height = multiplier_h ? columnWidth * multiplier_h[1] * 0.4 - 12 : columnWidth * 0.5;
+            $item.css({
+              width: width
+              //height: height
+            });
+          });
+
+          return columnWidth;
+        },
+        isotope = function isotope() {
+          $container.isotope({
+            resizable: false,
+            itemSelector: '.collection-grid-item',
+            masonry: {
+              columnWidth: colWidth(),
+              gutterWidth: 0
+            }
+          });
+        };
+      isotope();
+      $(window).resize(isotope);
+      var $optionSets = $('.tekup-portfolio-menu .option-set'),
+        $optionLinks = $optionSets.find('li');
+      $optionLinks.click(function () {
+        var $this = $(this);
+        var $optionSet = $this.parents('.option-set');
+        $optionSet.find('.active').removeClass('active');
+        $this.addClass('active');
+
+        // make option object dynamically, i.e. { filter: '.my-filter-class' }
+        var options = {},
+          key = $optionSet.attr('data-option-key'),
+          value = $this.attr('data-option-value');
+        // parse 'false' as false boolean
+        value = value === 'false' ? false : value;
+        options[key] = value;
+        if (key === 'layoutMode' && typeof changeLayoutMode === 'function') {
+          // changes in layout modes need extra logic
+          changeLayoutMode($this, options);
+        } else {
+          // creativewise, apply new options
+          $container.isotope(options);
+        }
+        return false;
+      });
+    }
+
+    /*--------------------------------------------------------------
+    TEKUP PORTFOLIO MASONAY FILTER JS
+    ------------------------------------------------------------*/
+    var tekup_gallery_masonay = $('#tekup-portfolio-masonay');
+    if (tekup_gallery_masonay.is_exist()) {
+      var $container = $(tekup_gallery_masonay),
+        colWidth = function colWidth() {
+          var w = $container.width(),
+            columnNum = 1,
+            columnWidth = 0;
+          if (w > 1200) {
+            columnNum = 3;
+          } else if (w > 900) {
+            columnNum = 3;
+          } else if (w > 600) {
+            columnNum = 2;
+          } else if (w > 450) {
+            columnNum = 1;
+          } else if (w > 385) {
+            columnNum = 1;
+          }
+          columnWidth = Math.floor(w / columnNum);
+          $container.find('.collection-grid-item').each(function () {
+            var $item = $(this),
+              multiplier_w = $item.attr('class').match(/collection-grid-item-w(\d)/),
+              multiplier_h = $item.attr('class').match(/collection-grid-item-h(\d)/),
+              width = multiplier_w ? columnWidth * multiplier_w[1] : columnWidth,
+              height = multiplier_h ? columnWidth * multiplier_h[1] * 0.4 - 12 : columnWidth * 0.5;
+            $item.css({
+              width: width
+              // height: height
+            });
+          });
+
+          return columnWidth;
+        },
+        isotope = function isotope() {
+          $container.isotope({
+            resizable: false,
+            itemSelector: '.collection-grid-item',
+            masonry: {
+              columnWidth: colWidth(),
+              gutterWidth: 0
+            }
+          });
+        };
+      isotope();
+      $(window).resize(isotope);
+      var $optionSets = $('.tekup-portfolio-menu .option-set'),
+        $optionLinks = $optionSets.find('li');
+      $optionLinks.click(function () {
+        var $this = $(this);
+        var $optionSet = $this.parents('.option-set');
+        $optionSet.find('.selected').removeClass('selected');
+        $this.addClass('selected');
+
+        // make option object dynamically, i.e. { filter: '.my-filter-class' }
+        var options = {},
+          key = $optionSet.attr('data-option-key'),
+          value = $this.attr('data-option-value');
+        // parse 'false' as false boolean
+        value = value === 'false' ? false : value;
+        options[key] = value;
+        if (key === 'layoutMode' && typeof changeLayoutMode === 'function') {
+          // changes in layout modes need extra logic
+          changeLayoutMode($this, options);
+        } else {
+          // creativewise, apply new options
+          $container.isotope(options);
+        }
+        return false;
+      });
+    }
+  }); // End window LODE
 
   /*--------------------------------------------------------------
-  tekup MAP JS
+  TEKUP MAP JS
   ------------------------------------------------------------*/
   var google_map = $('#map');
   if (google_map.is_exist()) {
@@ -481,15 +634,13 @@
     google.maps.event.addDomListener(window, 'load', init);
   }
 
-  //tekup wow js
+  /*--------------------------------------------------------------
+  TEKUP WOW JS
+  ------------------------------------------------------------*/
   var wow = new WOW({
     mobile: false,
     // default
     tablet: false
   });
   wow.init();
-
-  // AOS.init({
-  //   duration: 1200,
-  // })
 })(jQuery);
