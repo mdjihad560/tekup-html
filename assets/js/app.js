@@ -3,8 +3,9 @@
 (function ($) {
   "use strict";
 
-  /*------------------------------------------------------------------
-  [Table of contents]
+  /*--------------------------------------------------------------
+   [Table of contents]
+  
   TEKUP PRELOADER JS INIT
   TEKUP HEADER SEARCH JS INIT
   TEKUP STICKY MENU JS INIT
@@ -23,7 +24,7 @@
   TEKUP PORTFOLIO GRID FILTER JS
   TEKUP PORTFOLIO MASONAY FILTER JS
   TEKUP WOW JS
-  
+   
   -------------------------------------------------------------------*/
 
   /*--------------------------------------------------------------
