@@ -2001,7 +2001,7 @@ header.tekup-header-section.header-seven.sticky-menu {
 
 .search-overlay.open {
   opacity: 0.8;
-  z-index: 1;
+  z-index: 3;
   visibility: visible;
 }
 
@@ -3260,7 +3260,7 @@ h1.post__title {
   height: 60px;
   left: 60px;
   top: 50%;
-  z-index: 99;
+  z-index: 1;
   display: flex;
   align-items: center;
   justify-content: center;
